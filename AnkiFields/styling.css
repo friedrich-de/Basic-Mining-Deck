@@ -110,6 +110,8 @@ li:first-child ~ li {
 #box-definition {
     border: 1px solid gray;
     border-radius: 20px;
+    width: fit-content;
+    margin: auto;
 }
 
 /*Don't show the main screenshot on mobile (to prevent showing anime/VNs in public).*/
