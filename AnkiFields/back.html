@@ -1,0 +1,72 @@
+{{FrontSide}}
+
+<hr id=answer>
+
+<div id="box-definition">
+<div id="reading-field">
+<div id="accent-graph">{{Graph}}</div>
+{{Reading}}
+</div>
+<div id="glossary-field">{{Glossary}}</div>
+<div class="main_image">{{Picture}}</div>
+</div>
+
+<div id="sentence-field">{{Sentence}}</div>
+
+<p>{{Audio}}{{SentenceAudio}}</p>
+
+<script>
+// Cycable definition
+var definitions_items = document.getElementById('glossary-field').querySelectorAll('li')
+if (definitions_items.length > 0) {
+    let definition_list = [];
+    for (const definition of definitions_items) {
+        let definition_string = definition.innerHTML.toString();
+        const first_br_index = definition_string.indexOf("<br>");
+        if (first_br_index !== -1) {
+            definition_string = definition_string.substring(first_br_index + 4);
+        }
+        definition_list.push(definition_string);
+    }
+
+    let current_index = 0
+
+    function replace_glossary() {
+        if (current_index >= definition_list.length) {
+            current_index = 0
+        }
+        document.getElementById('glossary-field').innerHTML = `(${current_index + 1}/${definition_list.length}) ${definition_list[current_index]}`
+        current_index++
+    }
+
+    function replace_glossary_arrow_key(key) {
+        if (key.keyCode === 37) {
+            current_index = current_index - 2
+            if (current_index < 0) {
+                current_index = definition_list.length - 1
+            }
+            replace_glossary()
+        } else if (key.keyCode === 39) {
+            replace_glossary()
+        }
+    }
+
+    replace_glossary()
+    document.getElementById('glossary-field').addEventListener("click", replace_glossary)
+    document.addEventListener("keydown", replace_glossary_arrow_key)
+}
+// If there is only on definition, attempt to clean it up.
+else {
+    let definition = document.getElementById('glossary-field').innerHTML.toString();
+    const first_br_index = definition.indexOf("<br>");
+    if (first_br_index !== -1) {
+        definition = definition.substring(first_br_index + 4);
+        document.getElementById('glossary-field').innerHTML = definition
+    }
+    
+}
+// Remove 'No pitch accent data' text
+if (document.getElementById('accent-graph').innerHTML === "No pitch accent data") {
+    document.getElementById('accent-graph').style.visibility = "hidden"
+}
+</script>

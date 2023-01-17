@@ -1,0 +1,11 @@
+<div id='expression-field'>{{Word}}</div>
+<div id='hint-field'>{{Hint}}</div>
+
+<!--If the word is hiragana/katakana only, display the sentence in the hint field.-->
+<script>
+if ("{{Word}}" === "{{Reading}}") {
+    if (document.getElementById('hint-field').childNodes.length === 0) {
+        document.getElementById('hint-field').innerHTML  = "{{Sentence}}"
+    }
+}
+</script>

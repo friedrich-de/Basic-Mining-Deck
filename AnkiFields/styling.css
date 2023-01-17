@@ -1,0 +1,123 @@
+.card {
+    font-family: "MS UI Gothic", "Noto Sans CJK JP", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, メイリオ, Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ＭＳ ゴシック", "MS Gothic", TakaoPGothic, sans-serif;
+    font-size: calc(1em + 2vmax);
+    text-align: center;
+    color: white;
+    background-color: #222222;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*Adjust cards to screen size*/
+@media screen and (orientation: portrait) {
+    .card {
+        max-width: 100%;
+        font-size: calc(1.5em + 3vmax);
+    }
+}
+
+@media screen and (orientation: portrait) and (min-height: 1000px) {
+    .card {
+        max-width: 100%;
+        font-size: calc(2em + 5vmax);
+    }
+}
+
+@media screen and (orientation: landscape) {
+    .card {
+        max-width: 80%;
+    }
+}
+
+@media only screen and (orientation: landscape) and (min-width: 1200px) {
+    .card {
+        max-width: 70%;
+    }
+}
+
+@media only screen and (orientation: landscape) and (min-width: 2000px) {
+    .card {
+        max-width: 50%;
+        font-size: calc(1em + 3vmax);
+    }
+}
+
+
+/*Basic spacing and font size options*/
+
+#expression-field {
+    margin-bottom: -0.2rem;
+}
+
+#hint-field {
+    font-size: 40%;
+}
+
+#reading-field {
+    font-size: 80%;
+}
+
+#glossary-field {
+    font-size: 40%;
+}
+
+#sentence-field {
+    font-size: 50%;
+}
+
+#accent-graph {
+    font-size: 50%;
+    transform: scaleX(1.3);
+}
+
+/*Restrict size of screenshots.*/
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-width: 600px;
+    max-height: 300px;
+
+}
+
+/*Prevent long definition list cluttering by only displaying the first entry and centering it. This only triggers
+if the script to cycle through definitions fails.*/
+
+ol {
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+li:first-child {
+    text-align: center;
+}
+
+li:first-child ~ li {
+    display: none;
+}
+
+/*Create border*/
+#box-definition {
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+/*Don't show the main screenshot on mobile (to prevent showing anime/VNs in public).*/
+
+.iphone .main_image {
+    display: none;
+}
+
+.mobile .main_image {
+    display: none;
+}
