@@ -22,6 +22,7 @@ if (definitions_items.length > 0) {
     let definition_list = [];
     for (const definition of definitions_items) {
         let definition_string = definition.innerHTML.toString();
+        definition_string = definition_string.replace(/(<br>)+\s*$/g, "");
         const first_br_index = definition_string.indexOf("<br>");
         if (first_br_index !== -1) {
             definition_string = definition_string.substring(first_br_index + 4);
@@ -58,6 +59,7 @@ if (definitions_items.length > 0) {
 // If there is only on definition, attempt to clean it up.
 else {
     let definition = document.getElementById('glossary-field').innerHTML.toString();
+    definition = definition.replace(/(<br>)+\s*$/g, "");
     const first_br_index = definition.indexOf("<br>");
     if (first_br_index !== -1) {
         definition = definition.substring(first_br_index + 4);

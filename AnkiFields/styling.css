@@ -111,6 +111,7 @@ li:first-child ~ li {
     border: 1px solid gray;
     border-radius: 20px;
     width: fit-content;
+    padding: 5px;
     margin: auto;
 }
 
