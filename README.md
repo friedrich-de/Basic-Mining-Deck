@@ -34,7 +34,7 @@ below for a way to remedy this.
 | Hint          |                          |
 
 ## Direct Download
-See releases.
+https://ankiweb.net/shared/info/151553357
 
 ## How to update
 Open a card with the corresponding template in Anki. 
