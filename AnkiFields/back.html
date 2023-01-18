@@ -24,7 +24,8 @@ if (definitions_items.length > 0) {
         let definition_string = definition.innerHTML.toString();
         definition_string = definition_string.replace(/(<br>)+\s*$/g, "");
         const first_br_index = definition_string.indexOf("<br>");
-        if (first_br_index !== -1) {
+        const redundant_line_marker = definition_string.indexOf("【");
+        if (first_br_index !== -1 && redundant_line_marker !== -1 && redundant_line_marker < first_br_index) {
             definition_string = definition_string.substring(first_br_index + 4);
         }
         definition_list.push(definition_string);
@@ -61,7 +62,8 @@ else {
     let definition = document.getElementById('glossary-field').innerHTML.toString();
     definition = definition.replace(/(<br>)+\s*$/g, "");
     const first_br_index = definition.indexOf("<br>");
-    if (first_br_index !== -1) {
+    const redundant_line_marker = definition.indexOf("【");
+    if (first_br_index !== -1 && redundant_line_marker !== -1 && redundant_line_marker < first_br_index) {
         definition = definition.substring(first_br_index + 4);
         document.getElementById('glossary-field').innerHTML = definition
     }
