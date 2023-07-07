@@ -33,6 +33,9 @@ below for a way to remedy this.
 | Graph         | {pitch-accent-graphs}    |
 | Hint          |                          |
 
+## Handlebars
+Use default handlebars. If you have non-standard handlebars from a previous version, reset your handlebars.
+
 ## Direct Download
 https://ankiweb.net/shared/info/151553357
 
