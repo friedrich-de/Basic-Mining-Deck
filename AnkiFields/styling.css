@@ -9,14 +9,14 @@
 /*Adjust cards to screen size*/
 @media screen and (orientation: portrait) {
     .card {
-        max-width: 100%;
+        max-width: 90%;
         font-size: calc(1.5em + 3vmax);
     }
 }
 
 @media screen and (orientation: portrait) and (min-height: 1000px) {
     .card {
-        max-width: 100%;
+        max-width: 90%;
         font-size: calc(2em + 5vmax);
     }
 }
