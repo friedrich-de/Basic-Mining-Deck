@@ -7,7 +7,7 @@
 <div id="accent-graph">{{Graph}}</div>
 {{Reading}}
 </div>
-<div id="glossary-field">{{Glossary}}</div>
+<div id="glossary-field" class="tappable">{{Glossary}}</div>
 <div class="main_image">{{Picture}}</div>
 </div>
 
@@ -19,9 +19,9 @@
 // Cycable definition
 var definitions_items = document.getElementById('glossary-field').querySelectorAll('li')
 if (definitions_items.length > 0) {
-    let definition_list = [];
+    var definition_list = [];
     for (const definition of definitions_items) {
-        let definition_string = definition.innerHTML.toString();
+        var definition_string = definition.innerHTML.toString();
         definition_string = definition_string.replace(/(<br>)+\s*$/g, "");
         const first_br_index = definition_string.indexOf("<br>");
         const redundant_line_marker = definition_string.indexOf("【");
@@ -31,7 +31,7 @@ if (definitions_items.length > 0) {
         definition_list.push(definition_string);
     }
 
-    let current_index = 0
+    var current_index = 0
 
     function replace_glossary() {
         if (current_index >= definition_list.length) {
@@ -59,7 +59,7 @@ if (definitions_items.length > 0) {
 }
 // If there is only on definition, attempt to clean it up.
 else {
-    let definition = document.getElementById('glossary-field').innerHTML.toString();
+    var definition = document.getElementById('glossary-field').innerHTML.toString();
     definition = definition.replace(/(<br>)+\s*$/g, "");
     const first_br_index = definition.indexOf("<br>");
     const redundant_line_marker = definition.indexOf("【");
