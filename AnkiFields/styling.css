@@ -115,10 +115,10 @@ li:first-child ~ li {
 
 /*Don't show the main screenshot on mobile (to prevent showing anime/VNs in public).*/
 
-.iphone .main_image {
+/* .iphone .main_image {
     display: none;
 }
 
 .mobile .main_image {
     display: none;
-}
+} */

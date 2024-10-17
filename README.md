@@ -50,8 +50,8 @@ from `back.html` to `Back` and from `styling.css` to `Styling`.
 If you changed field names to something else, you will have to make changes to the
 corresponding text in the files.
 
-## How to restore images on mobile
-Delete the following lines from the `Styling` section of your card:
+## How to hide images on mobile
+Activate the following lines from the `Styling` section of your card:
 
 ```css
 .iphone .main_image {
