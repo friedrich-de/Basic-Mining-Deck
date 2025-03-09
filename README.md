@@ -1,3 +1,12 @@
+# Archived 09-03-2025
+
+Please consider using one of these alternatives instead:
+
+- https://github.com/friedrich-de/lapis-modified
+- https://github.com/donkuri/lapis
+
+_______
+
 # Mining Deck Template
 A basic functional Anki deck template for Japanese language learning.
 
